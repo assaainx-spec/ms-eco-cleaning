@@ -1,0 +1,16 @@
+# Original file
+x5index.html
+
+# Local server
+serve.pl
+
+# Claude config
+.claude/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Editor files
+*.sublime-project
+*.sublime-workspace
