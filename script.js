@@ -166,11 +166,14 @@ buildActiveItems();
 
 // ── LIGHTBOX ──
 let currentIdx = 0;
+let lightboxOpener = null;
 function openLightbox(item) {
+  lightboxOpener = document.activeElement;
   currentIdx = activeItems.indexOf(item);
   showLightboxItem(currentIdx);
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.querySelector('.lightbox-close').focus();
 }
 function showLightboxItem(idx) {
   const item = activeItems[idx];
@@ -186,12 +189,27 @@ function lightboxNav(dir) {
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
+  if (lightboxOpener) { lightboxOpener.focus(); lightboxOpener = null; }
 }
 document.addEventListener('keydown', e => {
   if (!document.getElementById('lightbox').classList.contains('open')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowRight') lightboxNav(1);
-  if (e.key === 'ArrowLeft') lightboxNav(-1);
+  if (e.key === 'Escape') { closeLightbox(); return; }
+  if (e.key === 'ArrowRight') { lightboxNav(1); return; }
+  if (e.key === 'ArrowLeft') { lightboxNav(-1); return; }
+  if (e.key === 'Tab') {
+    const focusable = [
+      document.querySelector('.lightbox-close'),
+      document.getElementById('lightboxPrev'),
+      document.getElementById('lightboxNext')
+    ];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  }
 });
 document.getElementById('lightbox').addEventListener('click', e => {
   if (e.target === document.getElementById('lightbox') || e.target === document.getElementById('lightboxImg')) closeLightbox();
