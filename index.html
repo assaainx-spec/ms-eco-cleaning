@@ -48,9 +48,9 @@
     <a href="https://wa.me/31634859593" class="topbar-cta"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     <a href="mailto:ms.ecocleaningservice@gmail.com" target="_blank" class="topbar-cta-email"><svg viewBox="0 0 20 15" width="15" height="11" aria-hidden="true" style="vertical-align:-1px;flex-shrink:0"><rect width="20" height="15" rx="2" fill="white"/><polygon points="0,0 10,8 20,0" fill="#e74c3c"/></svg> E-mail</a>
     <div class="lang-switcher">
-      <a href="index.html" class="lang-btn active" hreflang="nl" onclick="localStorage.setItem('preferredLang','nl')">NL</a>
-      <a href="en.html" class="lang-btn" hreflang="en" onclick="localStorage.setItem('preferredLang','en')">EN</a>
-      <a href="pl.html" class="lang-btn" hreflang="pl" onclick="localStorage.setItem('preferredLang','pl')">PL</a>
+      <a href="index.html" class="lang-btn active" hreflang="nl" onclick="localStorage.setItem('preferredLang','nl');sessionStorage.setItem('scrollPos',window.scrollY)">NL</a>
+      <a href="en.html" class="lang-btn" hreflang="en" onclick="localStorage.setItem('preferredLang','en');sessionStorage.setItem('scrollPos',window.scrollY)">EN</a>
+      <a href="pl.html" class="lang-btn" hreflang="pl" onclick="localStorage.setItem('preferredLang','pl');sessionStorage.setItem('scrollPos',window.scrollY)">PL</a>
     </div>
     <button class="hamburger" id="hambBtn" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -71,9 +71,9 @@
   <a href="#werkgebied" onclick="closeMenu()">Werkgebied</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
   <div class="drawer-lang">
-    <a href="index.html" hreflang="nl" onclick="localStorage.setItem('preferredLang','nl')">NL</a>
-    <a href="en.html" hreflang="en" onclick="localStorage.setItem('preferredLang','en')">EN</a>
-    <a href="pl.html" hreflang="pl" onclick="localStorage.setItem('preferredLang','pl')">PL</a>
+    <a href="index.html" hreflang="nl" onclick="localStorage.setItem('preferredLang','nl');sessionStorage.setItem('scrollPos',window.scrollY)">NL</a>
+    <a href="en.html" hreflang="en" onclick="localStorage.setItem('preferredLang','en');sessionStorage.setItem('scrollPos',window.scrollY)">EN</a>
+    <a href="pl.html" hreflang="pl" onclick="localStorage.setItem('preferredLang','pl');sessionStorage.setItem('scrollPos',window.scrollY)">PL</a>
   </div>
 </div>
 

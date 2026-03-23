@@ -1,4 +1,13 @@
 
+// ── SCROLL RESTORE AFTER LANGUAGE SWITCH ──
+(function() {
+  const pos = sessionStorage.getItem('scrollPos');
+  if (pos) {
+    sessionStorage.removeItem('scrollPos');
+    window.addEventListener('load', () => window.scrollTo(0, parseInt(pos)));
+  }
+})();
+
 // ── LANGUAGE STRINGS ──
 const _lang = document.documentElement.lang || 'nl';
 const _t = {
