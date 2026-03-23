@@ -1,0 +1,215 @@
+================================================================
+  M.S ECO CLEANING SERVICE — WEBSITE CHANGELOG
+  Last updated: 23 maart 2026
+================================================================
+
+----------------------------------------------------------------
+[23-03-2026] BROWSER LANGUAGE AUTO-DETECTION
+----------------------------------------------------------------
+Added automatic language redirect on index.html:
+  - On first visit, browser language (navigator.language) is read
+  - Polish browser (pl-*) → redirected to pl.html
+  - Non-Dutch browser → redirected to en.html
+  - Dutch browser (nl-*) → stays on index.html
+  - User preference saved to localStorage ('preferredLang')
+  - Manual language switcher clicks update localStorage preference
+  - Returning visitors go to their remembered language
+
+All lang buttons (topbar + mobile drawer) across all 3 pages
+now save the chosen language to localStorage on click.
+
+----------------------------------------------------------------
+[23-03-2026] FORM & GALLERY LOCALIZATION FIX
+----------------------------------------------------------------
+script.js was using hardcoded Dutch strings for all languages.
+Fixed by reading document.documentElement.lang at runtime and
+selecting from an i18n map:
+
+  NL: "Bezig met verzenden..." / "✓ Bericht verstuurd!" / ...
+  EN: "Sending..." / "✓ Message sent!" / ...
+  PL: "Wysyłanie..." / "✓ Wiadomość wysłana!" / ...
+
+Gallery toggle button text also now uses language-aware strings:
+  NL: "Galerij inklappen" / "Galerij uitklappen"
+  EN: "Collapse Gallery" / "Expand Gallery"
+  PL: "Zwiń Galerię" / "Rozwiń Galerię"
+
+----------------------------------------------------------------
+[23-03-2026] GOOGLE MAPS EMBED LANGUAGE FIX
+----------------------------------------------------------------
+Maps embed was hardcoded to Dutch (1snl!2snl) on all pages.
+Fixed interface language parameter per page:
+  en.html → !3m2!1sen!2snl  (English UI, Netherlands region)
+  pl.html → !3m2!1spl!2snl  (Polish UI, Netherlands region)
+  index.html → unchanged (Dutch)
+
+LIVE WEBSITE : https://ms-eco-cleaning.nl
+GITHUB REPO  : https://github.com/assaainx-spec/ms-eco-cleaning
+LOCAL FOLDER : C:\Users\assaa\Desktop\Eco-Cleaning-Service
+LANGUAGES    : NL (index.html) · EN (en.html) · PL (pl.html)
+
+----------------------------------------------------------------
+[23-03-2026] LOGO COMPRESSION
+----------------------------------------------------------------
+- Logo.png compressed from 1.4MB → 64KB (95% smaller)
+- New Logo.webp created at 43KB for modern browsers
+- All HTML files updated with <picture> element:
+    Modern browsers → load Logo.webp (43KB)
+    Older browsers  → fallback to Logo.png (64KB)
+- Result: logo loads ~30x faster than before
+
+----------------------------------------------------------------
+[23-03-2026] NEW SERVICES ADDED
+----------------------------------------------------------------
+Added to Particuliere Schoonmaak service card (all 3 languages):
+  NL: Verhuisschoonmaak / Renovatieschoonmaak
+  EN: Move-in/move-out cleaning / Post-renovation cleaning
+  PL: Sprzątanie po przeprowadzce / Sprzątanie po remoncie
+
+Added to hero tags (visible at top of page):
+  📦 Verhuisschoonmaak
+  🔨 Renovatieschoonmaak
+
+Source: matched to business card services
+
+----------------------------------------------------------------
+[23-03-2026] WHY CHOOSE US — VISUAL REDESIGN
+----------------------------------------------------------------
+Replaced old family badge + 4 value cards with a new
+"Waarom kiezen voor ons?" section (all 3 languages):
+
+  ✓ Meer dan 12 jaar ervaring
+  ✓ Betrouwbare en professionele service
+  ✓ Discreet en flexibel
+  ✓ Hoogwaardige kwaliteit met oog voor detail
+  ✓ Ecologische schoonmaakmiddelen
+  ✓ Eigen professionele apparatuur
+
+  NOTE: "Volledig verzekerd (WA)" removed — to be added back
+        once WA insurance application is approved.
+
+Design: circular teal checkmark badges, mini cards with hover
+effect, gold serif header with divider line.
+
+----------------------------------------------------------------
+[23-03-2026] CONTENT UPDATE — SOCIAL MEDIA POST
+----------------------------------------------------------------
+Bedrijfsschoonmaak service list updated with detailed tasks:
+  - Stofzuigen & dweilen van vloeren
+  - Reiniging van sanitair
+  - Keukens & pantry's schoonmaken
+  - Afstoffen van oppervlakken & apparatuur
+  - Prullenbakken legen & afvalverwijdering
+
+Extra services (optioneel) added:
+  - Tapijt- & vloerreiniging
+  - Levering van hygiëneproducten
+  - Wassen van handdoeken & theedoeken
+
+Pricing strip added (werkgebied + WhatsApp CTA)
+  NOTE: €89 per opdracht removed — add back when ready to publish
+  NOTE: Verzekering removed — add back once WA approved
+
+----------------------------------------------------------------
+[23-03-2026] DOMAIN & HOSTING SETUP
+----------------------------------------------------------------
+Domain registered: ms-eco-cleaning.nl (TransIP)
+  - TransIP-instellingen turned OFF (manual DNS control)
+  - DNS A records set (4x GitHub Pages IPs):
+      185.199.108.153
+      185.199.109.153
+      185.199.110.153
+      185.199.111.153
+  - CNAME www → assaainx-spec.github.io.
+  - HTTPS enforced via GitHub Pages ✓
+
+GitHub Pages configured:
+  - Repo: ms-eco-cleaning
+  - Branch: main / (root)
+  - Custom domain: ms-eco-cleaning.nl
+  - CNAME file in repo ✓
+
+----------------------------------------------------------------
+PENDING / TO-DO
+----------------------------------------------------------------
+
+  — BUSINESS / CONTENT —
+
+  [ ] Add "Volledig verzekerd (WA)" back to checklist
+      → once WA insurance is approved
+      → appears in: Why Choose Us section (all 3 languages)
+
+  [ ] Add pricing (€89 per opdracht excl. btw)
+      → once ready to publish publicly
+      → add to Bedrijfsschoonmaak card + pricing strip
+
+  [ ] Fill in KvK and BTW number in footer
+      → currently shows XXXXXXXX placeholders in all 3 HTML files
+
+  [ ] Update QR code on business card
+      → new QR should point to ms-eco-cleaning.nl
+      → generate at: qr-code-generator.com
+
+  — LOCALIZATION (i18n) —
+
+  [x] Fix form success/error messages — done 23-03-2026
+      → script.js now reads document.lang and uses i18n string map
+
+  [x] Localize Google Maps embed language — done 23-03-2026
+      → en.html: !1sen!2snl · pl.html: !1spl!2snl
+
+  — SEO —
+
+  [ ] Add Schema.org LocalBusiness structured data (JSON-LD)
+      → include: name, address, telephone, url, serviceArea, openingHours
+      → big local SEO win, zero visual change
+      → add to <head> of all 3 main HTML files
+
+  [ ] Add canonical tags to language versions
+      → prevents duplicate content penalty across NL/EN/PL pages
+      → e.g. <link rel="canonical" href="https://ms-eco-cleaning.nl/"> on index.html
+
+  [ ] Add sitemap.xml
+      → list all 6 pages (3 main + 3 privacy) with hreflang variants
+
+  [ ] Add robots.txt
+      → allow all crawlers, point to sitemap
+
+  — PERFORMANCE —
+
+  [ ] Compress gallery images
+      → average ~360 KB each, target <150 KB
+      → files: Bedrijfschoonmaak1–5.jpg, deepcleaning1–2.jpg, reorganisatie1.jpg
+      → consider converting to WebP (same <picture> pattern as logo)
+
+  [ ] Fix Open Graph image
+      → og:image currently points to Logo.png
+      → should point to a dedicated OG image (~1200×630px, <200 KB)
+      → affects social media link previews on all 3 main pages
+
+  — ACCESSIBILITY —
+
+  [ ] Link form <label> elements to their inputs
+      → add for="..." on each <label> and matching id="..." on each <input>/<textarea>/<select>
+      → affects contact form in all 3 HTML files
+
+  [ ] Add aria-label to emoji icons used as visual elements
+      → e.g. role="img" aria-label="Kantoor" on 🏢
+      → affects hero tags and service card icons
+
+  [ ] Trap focus inside lightbox modal when open
+      → keyboard focus can currently escape the lightbox overlay
+      → fix in: script.js lightbox open/close logic
+
+  — UX IMPROVEMENTS —
+
+  [ ] Add swipe gesture support to lightbox
+      → currently only keyboard (← →) and click buttons work
+      → mobile users can't swipe between images
+      → add touchstart/touchend handlers in script.js
+
+  [ ] Add 404 error page (404.html)
+      → GitHub Pages will serve it automatically if present
+      → should match site design and link back to homepage
+
+================================================================

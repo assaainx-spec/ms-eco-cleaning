@@ -4,6 +4,11 @@ x5index.html
 # Local server
 serve.pl
 
+# Node
+node_modules/
+package.json
+package-lock.json
+
 # Claude config
 .claude/
 

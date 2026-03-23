@@ -1,4 +1,44 @@
 
+// ── LANGUAGE STRINGS ──
+const _lang = document.documentElement.lang || 'nl';
+const _t = {
+  nl: {
+    galleryCollapse: '▲ Galerij inklappen',
+    galleryExpand:   '▼ Galerij uitklappen',
+    sending:         'Bezig met verzenden...',
+    sent:            '✓ Bericht verstuurd!',
+    retry:           '✗ Probeer opnieuw',
+    connError:       '✗ Verbindingsfout',
+    submitDefault:   'Verstuur Bericht ✦',
+  },
+  en: {
+    galleryCollapse: '▲ Collapse Gallery',
+    galleryExpand:   '▼ Expand Gallery',
+    sending:         'Sending...',
+    sent:            '✓ Message sent!',
+    retry:           '✗ Please try again',
+    connError:       '✗ Connection error',
+    submitDefault:   'Send Message ✦',
+  },
+  pl: {
+    galleryCollapse: '▲ Zwiń Galerię',
+    galleryExpand:   '▼ Rozwiń Galerię',
+    sending:         'Wysyłanie...',
+    sent:            '✓ Wiadomość wysłana!',
+    retry:           '✗ Spróbuj ponownie',
+    connError:       '✗ Błąd połączenia',
+    submitDefault:   'Wyślij Wiadomość ✦',
+  },
+}[_lang] || {
+  galleryCollapse: '▲ Collapse Gallery',
+  galleryExpand:   '▼ Expand Gallery',
+  sending:         'Sending...',
+  sent:            '✓ Message sent!',
+  retry:           '✗ Please try again',
+  connError:       '✗ Connection error',
+  submitDefault:   'Send Message ✦',
+};
+
 // ── GALLERY COLLAPSE ──
 function toggleGallery() {
   const col = document.getElementById('galleryCollapsible');
@@ -6,7 +46,7 @@ function toggleGallery() {
   const isCollapsed = col.classList.toggle('collapsed');
   btn.classList.toggle('collapsed', isCollapsed);
   btn.setAttribute('aria-expanded', !isCollapsed);
-  btn.textContent = isCollapsed ? 'Galerij uitklappen' : 'Galerij inklappen';
+  btn.textContent = isCollapsed ? _t.galleryExpand : _t.galleryCollapse;
 }
 
 // ── COOKIE BANNER ──
@@ -118,7 +158,7 @@ async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const btn = form.querySelector('.form-submit');
-  btn.textContent = 'Bezig met verzenden...';
+  btn.textContent = _t.sending;
   btn.disabled = true;
   try {
     const res = await fetch(form.action, {
@@ -127,19 +167,19 @@ async function handleSubmit(e) {
       headers: { 'Accept': 'application/json' }
     });
     if (res.ok) {
-      btn.textContent = '✓ Bericht verstuurd!';
+      btn.textContent = _t.sent;
       btn.style.background = 'linear-gradient(135deg,#2ab5ac,#4ecdc4)';
       form.reset();
-      setTimeout(() => { btn.textContent = 'Verstuur Bericht ✦'; btn.style.background = ''; btn.disabled = false; }, 4000);
+      setTimeout(() => { btn.textContent = _t.submitDefault; btn.style.background = ''; btn.disabled = false; }, 4000);
     } else {
-      btn.textContent = '✗ Probeer opnieuw';
+      btn.textContent = _t.retry;
       btn.style.background = '#c0392b';
-      setTimeout(() => { btn.textContent = 'Verstuur Bericht ✦'; btn.style.background = ''; btn.disabled = false; }, 3000);
+      setTimeout(() => { btn.textContent = _t.submitDefault; btn.style.background = ''; btn.disabled = false; }, 3000);
     }
   } catch {
-    btn.textContent = '✗ Verbindingsfout';
+    btn.textContent = _t.connError;
     btn.style.background = '#c0392b';
-    setTimeout(() => { btn.textContent = 'Verstuur Bericht ✦'; btn.style.background = ''; btn.disabled = false; }, 3000);
+    setTimeout(() => { btn.textContent = _t.submitDefault; btn.style.background = ''; btn.disabled = false; }, 3000);
   }
 }
 

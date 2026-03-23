@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Light Theme Preview — M.S ECO Cleaning Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  /* ── PREVIEW BANNER ── */
+  .preview-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+    background: #1c1c1c; color: #fff;
+    font-family: 'Jost', sans-serif; font-size: .8rem; letter-spacing: .06em;
+    text-align: center; padding: 8px 16px;
+    display: flex; align-items: center; justify-content: center; gap: 24px;
+  }
+  .preview-banner a {
+    color: #a8c5a0; text-decoration: underline; font-weight: 600;
+  }
+
+  /* ── COLOR TOKENS — LIGHT THEME ── */
+  :root {
+    --bg:        #eaede9;   /* pale mint-gray — matches card background */
+    --surface:   #f4f6f3;   /* slightly lighter surface for cards */
+    --surface2:  #ffffff;
+    --ink:        #1a1c1a;  /* near-black text */
+    --ink-mid:    #4a4e4a;  /* secondary text */
+    --ink-light:  #7a8078;  /* muted text */
+    --green:      #3d7a4f;  /* eco accent green */
+    --green-light:#5a9e6a;
+    --sage:       #8aad8a;  /* soft sage for borders/accents */
+    --border:     rgba(0,0,0,.1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    padding-top: 84px; /* banner + topbar */
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    position: fixed; top: 32px; left: 0; right: 0; z-index: 100;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 16px rgba(0,0,0,.06);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 32px; height: 52px;
+  }
+  .topbar-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .topbar-logo img { height: 34px; }
+  .topbar-logo-text {
+    font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+    font-weight: 700; color: var(--ink); line-height: 1.2;
+  }
+  .topbar-logo-text span {
+    display: block; font-family: 'Jost', sans-serif; font-size: .58rem;
+    font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-light);
+  }
+  .topbar-nav { display: flex; gap: 28px; }
+  .topbar-nav a {
+    font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--ink-mid); text-decoration: none; font-weight: 500;
+    transition: color .2s;
+  }
+  .topbar-nav a:hover { color: var(--green); }
+  .topbar-actions { display: flex; align-items: center; gap: 10px; }
+  .btn-wa {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green); color: #fff;
+    font-family: 'Jost', sans-serif; font-size: .76rem; font-weight: 600;
+    letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
+    padding: 8px 18px; border-radius: 4px; transition: background .2s;
+  }
+  .btn-wa:hover { background: var(--green-light); }
+  .lang { display: flex; gap: 4px; }
+  .lang a {
+    font-size: .7rem; font-weight: 600; letter-spacing: .1em; color: var(--ink-mid);
+    text-decoration: none; padding: 4px 8px; border-radius: 3px;
+    border: 1px solid transparent; transition: all .2s;
+  }
+  .lang a.active { background: var(--bg); border-color: var(--border); color: var(--ink); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 88vh; display: flex; align-items: center;
+    background: linear-gradient(145deg, var(--surface2) 0%, var(--bg) 60%, #d8e4d8 100%);
+    padding: 80px 40px 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -120px; right: -120px;
+    width: 480px; height: 480px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(138,173,138,.25) 0%, transparent 70%);
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -80px; left: -80px;
+    width: 360px; height: 360px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(61,122,79,.1) 0%, transparent 70%);
+  }
+  .hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-logo { height: 80px; margin-bottom: 28px; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(61,122,79,.1); border: 1px solid rgba(61,122,79,.25);
+    border-radius: 40px; padding: 5px 18px;
+    font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--green); margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 700;
+    color: var(--ink); line-height: 1.05; margin-bottom: 16px;
+  }
+  .hero h1 em { font-style: italic; color: var(--green); }
+  .hero-sub {
+    font-size: 1.05rem; color: var(--ink-mid);
+    letter-spacing: .04em; margin-bottom: 36px;
+  }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+  .hero-tag {
+    background: var(--surface2); border: 1px solid var(--border);
+    color: var(--ink-mid); font-size: .75rem; letter-spacing: .06em;
+    padding: 6px 14px; border-radius: 20px;
+  }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--green); color: #fff;
+    font-weight: 600; font-size: .88rem; letter-spacing: .07em; text-transform: uppercase;
+    text-decoration: none; padding: 15px 32px; border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(61,122,79,.25); transition: background .2s, transform .2s;
+  }
+  .btn-primary:hover { background: var(--green-light); transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; border: 1px solid rgba(61,122,79,.4); color: var(--green);
+    font-size: .88rem; letter-spacing: .07em; text-transform: uppercase;
+    text-decoration: none; padding: 15px 32px; border-radius: 4px;
+    transition: background .2s, border-color .2s;
+  }
+  .btn-secondary:hover { background: rgba(61,122,79,.08); border-color: var(--green); }
+
+  /* ── PROBLEM CARDS ── */
+  .hero-problems { display: flex; gap: 14px; flex-wrap: wrap; }
+  .prob-card {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px;
+    display: flex; align-items: center; gap: 12px; flex: 1; min-width: 240px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.04);
+  }
+  .prob-before, .prob-after { font-size: .8rem; color: var(--ink-mid); line-height: 1.4; }
+  .prob-arrow { color: var(--sage); font-size: 1.2rem; }
+  .prob-after { color: var(--green); font-weight: 500; }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 80px 40px; }
+  .container { max-width: 1080px; margin: 0 auto; }
+  .section-label {
+    font-size: .68rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--green); font-weight: 600; margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--ink);
+    line-height: 1.1; margin-bottom: 16px;
+  }
+  .section-title em { color: var(--green); font-style: italic; }
+  .section-line {
+    width: 48px; height: 2px;
+    background: linear-gradient(90deg, var(--green), var(--sage));
+    margin-bottom: 40px; border-radius: 2px;
+  }
+
+  /* ── ABOUT ── */
+  .about { background: var(--surface2); }
+  .over-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .over-text p { color: var(--ink-mid); line-height: 1.8; margin-bottom: 16px; font-size: .95rem; }
+  .why-trust {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; margin-top: 24px;
+  }
+  .why-trust-header { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+  .why-trust-title { display: block; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .why-trust-sub { font-size: .78rem; color: var(--ink-light); }
+  .why-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .why-list li { display: flex; align-items: center; gap: 10px; font-size: .88rem; color: var(--ink-mid); }
+  .why-check {
+    width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+    background: var(--green); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700;
+  }
+  .over-visual { display: flex; flex-direction: column; gap: 0; background: var(--bg); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+  .stat { padding: 28px; text-align: center; }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: var(--green); }
+  .stat-label { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-light); margin-top: 4px; }
+  .stat-divider { height: 1px; background: var(--border); }
+
+  /* ── SERVICES ── */
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
+  .service-card {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 14px; padding: 28px; transition: box-shadow .2s, transform .2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,.04);
+  }
+  .service-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.1); transform: translateY(-3px); }
+  .service-icon { font-size: 2rem; margin-bottom: 14px; }
+  .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+  .service-card > p { font-size: .88rem; color: var(--ink-mid); line-height: 1.6; margin-bottom: 14px; }
+  .service-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .service-list li { font-size: .82rem; color: var(--ink-mid); padding-left: 14px; position: relative; }
+  .service-list li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+  .pricing-strip {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  }
+  .pricing-item { display: flex; align-items: center; gap: 12px; }
+  .pricing-item strong { display: block; font-size: .88rem; color: var(--ink); }
+  .pricing-item span { font-size: .8rem; color: var(--ink-light); }
+  .deep-banner {
+    background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
+    border-radius: 14px; padding: 32px; display: flex; align-items: center; gap: 32px;
+    color: #fff; box-shadow: 0 6px 24px rgba(61,122,79,.2);
+  }
+  .deep-banner h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; }
+  .deep-banner p { font-size: .88rem; opacity: .9; line-height: 1.7; margin-bottom: 16px; }
+  .deep-checks { display: flex; flex-wrap: wrap; gap: 8px; }
+  .deep-check {
+    background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.3);
+    border-radius: 20px; padding: 4px 12px; font-size: .75rem; font-weight: 500;
+  }
+  .deep-banner .btn-primary { background: #fff; color: var(--green); box-shadow: none; white-space: nowrap; flex-shrink: 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink); color: rgba(255,255,255,.85);
+    text-align: center; padding: 48px 40px 32px;
+  }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; margin: 12px 0 6px; }
+  .footer-tagline { font-size: .8rem; letter-spacing: .1em; opacity: .55; margin-bottom: 12px; }
+  footer p { font-size: .82rem; opacity: .6; margin-bottom: 8px; }
+  footer img { height: 40px; opacity: .9; }
+
+  @media (max-width: 900px) {
+    .over-grid, .services-grid { grid-template-columns: 1fr; }
+    .topbar-nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PREVIEW BANNER -->
+<div class="preview-banner">
+  ⚠️ This is a <strong>light theme preview only</strong> — not the live site.
+  <a href="index.html">← Back to live site</a>
+</div>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <a href="#" class="topbar-logo">
+    <picture><source srcset="photos/Logo.webp" type="image/webp"><img src="photos/Logo.png" alt="Logo"></picture>
+    <div class="topbar-logo-text">M.S ECO<span>Cleaning Service</span></div>
+  </a>
+  <nav class="topbar-nav">
+    <a href="#over">Over Ons</a>
+    <a href="#diensten">Diensten</a>
+    <a href="#galerij">Galerij</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="topbar-actions">
+    <a href="https://wa.me/31634859593" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <div class="lang">
+      <a href="#" class="active">NL</a>
+      <a href="#">EN</a>
+      <a href="#">PL</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <picture><source srcset="photos/Logo.webp" type="image/webp"><img src="photos/Logo.png" alt="Logo" class="hero-logo"></picture>
+    <div class="hero-badge">✦ Professionele Schoonmaak ✦</div>
+    <h1>M.S <em>ECO</em><br>Cleaning Service</h1>
+    <p class="hero-sub">Eco-vriendelijk &nbsp;·&nbsp; Discreet &nbsp;·&nbsp; Oog voor detail</p>
+    <div class="hero-tags">
+      <span class="hero-tag">🏢 Kantoren</span>
+      <span class="hero-tag">🏠 Woningen</span>
+      <span class="hero-tag">✨ Deep Cleaning</span>
+      <span class="hero-tag">📦 Verhuisschoonmaak</span>
+      <span class="hero-tag">🔨 Renovatieschoonmaak</span>
+      <span class="hero-tag">🗂️ Reorganisatie</span>
+    </div>
+    <div class="hero-cta">
+      <a href="https://wa.me/31634859593" class="btn-primary"><i class="fa-brands fa-whatsapp"></i> Direct WhatsApp Offerte</a>
+      <a href="#diensten" class="btn-secondary">Bekijk Diensten</a>
+    </div>
+    <div class="hero-problems">
+      <div class="prob-card">
+        <div class="prob-before">😓 Geen tijd voor grondige schoonmaak</div>
+        <div class="prob-arrow">→</div>
+        <div class="prob-after">✅ Wij regelen het — snel & professioneel</div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-before">⚗️ Chemische middelen in uw ruimte</div>
+        <div class="prob-arrow">→</div>
+        <div class="prob-after">🌿 100% eco-vriendelijke middelen</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVER ONS -->
+<section id="over" class="about">
+  <div class="container">
+    <div class="over-grid">
+      <div class="over-text">
+        <p class="section-label">Over Ons</p>
+        <h2 class="section-title">Een familiebedrijf<br><em>met hart voor schoon</em></h2>
+        <div class="section-line"></div>
+        <p>M.S ECO Cleaning Service is een <strong>familiebedrijf</strong> dat schoonmaken met persoonlijke aandacht combineert. Met <strong>meer dan 12 jaar ervaring</strong> weten wij precies wat nodig is voor een vlekkeloos resultaat.</p>
+        <p>Wij zijn actief voor zowel <strong>bedrijven als particulieren</strong> in de regio Westland en omgeving. Van kantoor tot kantine, van woning tot horecazaak — wij werken met <strong>eco-vriendelijke middelen</strong>.</p>
+        <div class="why-trust">
+          <div class="why-trust-header">
+            <span style="font-size:2rem">👨‍👩‍👧</span>
+            <div>
+              <strong class="why-trust-title">Waarom kiezen voor ons?</strong>
+              <span class="why-trust-sub">Familiebedrijf · Persoonlijk contact · Eerlijk & vakkundig werk</span>
+            </div>
+          </div>
+          <ul class="why-list">
+            <li><span class="why-check">✓</span>Meer dan 12 jaar ervaring</li>
+            <li><span class="why-check">✓</span>Betrouwbare en professionele service</li>
+            <li><span class="why-check">✓</span>Discreet en flexibel</li>
+            <li><span class="why-check">✓</span>Hoogwaardige kwaliteit met oog voor detail</li>
+            <li><span class="why-check">✓</span>Ecologische schoonmaakmiddelen</li>
+            <li><span class="why-check">✓</span>Eigen professionele apparatuur</li>
+          </ul>
+        </div>
+      </div>
+      <div class="over-visual">
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Eco-vriendelijk</div></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Jaar ervaring</div></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><div class="stat-num">★★★★★</div><div class="stat-label">Klanttevredenheid</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section id="diensten">
+  <div class="container">
+    <p class="section-label">Onze Diensten</p>
+    <h2 class="section-title">Wat wij voor<br><em>u kunnen doen</em></h2>
+    <div class="section-line"></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Bedrijfsschoonmaak</h3>
+        <p>Professionele reiniging van kantoren, praktijken en kantines. Regelmatig of eenmalig.</p>
+        <ul class="service-list">
+          <li>Stofzuigen & dweilen van vloeren</li>
+          <li>Reiniging van sanitair</li>
+          <li>Keukens & pantry's schoonmaken</li>
+          <li>Afstoffen van oppervlakken</li>
+          <li>Prullenbakken legen</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Particuliere Schoonmaak</h3>
+        <p>Uw thuis verdient de beste zorg. Van reguliere schoonmaak tot uitgebreide behandeling.</p>
+        <ul class="service-list">
+          <li>Woonkamer & slaapkamers</li>
+          <li>Keuken & badkamer</li>
+          <li>Verhuisschoonmaak</li>
+          <li>Renovatieschoonmaak</li>
+          <li>Eenmalig of periodiek</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🗂️</div>
+        <h3>Reorganisatie & Opruimen</h3>
+        <p>Meer rust, ruimte en overzicht in uw woning of werkplek.</p>
+        <ul class="service-list">
+          <li>Garderobe reorganisatie</li>
+          <li>Keuken opruimen</li>
+          <li>Opbergsystemen</li>
+          <li>Eenmalige service</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pricing-strip">
+      <div class="pricing-item">
+        <span style="font-size:1.4rem">📍</span>
+        <div><strong>Werkgebied</strong><span>Westland en omgeving</span></div>
+      </div>
+      <a href="https://wa.me/31634859593" class="btn-primary" style="white-space:nowrap"><i class="fa-brands fa-whatsapp"></i> Vraag offerte aan</a>
+    </div>
+    <div class="deep-banner">
+      <div style="flex:1">
+        <h3>✨ Deep Cleaning</h3>
+        <p>Onze diepgaande reinigingsservice bereikt elke hoek, elke naad en elk oppervlak. Perfect na een verhuizing, verbouwing, of als extra grondige beurt.</p>
+        <div class="deep-checks">
+          <span class="deep-check">Keuken</span>
+          <span class="deep-check">Badkamer</span>
+          <span class="deep-check">Garderobe</span>
+          <span class="deep-check">Professioneel & eco</span>
+        </div>
+      </div>
+      <a href="https://wa.me/31634859593" class="btn-primary">Vraag offerte aan</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <picture><source srcset="photos/Logo.webp" type="image/webp"><img src="photos/Logo.png" alt="Logo"></picture>
+  <div class="footer-brand">M.S ECO Cleaning Service</div>
+  <p class="footer-tagline">Eco-vriendelijk · Discreet · Oog voor detail</p>
+  <p>📍 Westland & omgeving &nbsp;|&nbsp; 📞 0634859593 &nbsp;|&nbsp; ✉️ ms.ecocleaningservice@gmail.com</p>
+  <p style="margin-top:24px;font-size:.7rem;opacity:.35">© 2026 M.S ECO Cleaning Service. Alle rechten voorbehouden.</p>
+</footer>
+
+</body>
+</html>
