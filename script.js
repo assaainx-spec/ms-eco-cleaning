@@ -4,7 +4,15 @@
   const pos = sessionStorage.getItem('scrollPos');
   if (pos) {
     sessionStorage.removeItem('scrollPos');
-    window.addEventListener('load', () => window.scrollTo(0, parseInt(pos)));
+    window.addEventListener('load', () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+      document.body.style.scrollBehavior = 'auto';
+      window.scrollTo(0, parseInt(pos));
+      setTimeout(() => {
+        document.documentElement.style.scrollBehavior = '';
+        document.body.style.scrollBehavior = '';
+      }, 50);
+    });
   }
 })();
 

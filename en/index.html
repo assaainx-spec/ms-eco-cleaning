@@ -1,32 +1,21 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-(function(){
-  var pref = localStorage.getItem('preferredLang');
-  if (pref === 'en') { location.replace('en/'); return; }
-  if (pref === 'pl') { location.replace('pl/'); return; }
-  if (pref === 'nl') return;
-  var bl = (navigator.language || '').toLowerCase();
-  if (bl.startsWith('pl')) { localStorage.setItem('preferredLang','pl'); location.replace('pl/'); }
-  else if (!bl.startsWith('nl')) { localStorage.setItem('preferredLang','en'); location.replace('en/'); }
-})();
-</script>
-<title>M.S ECO Cleaning Service</title>
-<meta name="description" content="M.S ECO Cleaning Service — professionele schoonmaak voor kantoren, horeca en woningen in Westland en omgeving. Eco-vriendelijk, discreet en oog voor detail.">
-<link rel="icon" type="image/png" href="photos/Logo.png">
-<link rel="apple-touch-icon" href="photos/Logo.png">
+<title>M.S ECO Cleaning Service — Professional Cleaning in Westland</title>
+<meta name="description" content="M.S ECO Cleaning Service — professional cleaning for offices, hospitality and homes in Westland and the surrounding area. Eco-friendly, discreet and attentive to detail.">
+<link rel="icon" type="image/png" href="../photos/Logo.png">
+<link rel="apple-touch-icon" href="../photos/Logo.png">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ms-eco-cleaning.nl">
+<meta property="og:url" content="https://ms-eco-cleaning.nl/en/">
 <meta property="og:title" content="M.S ECO Cleaning Service">
-<meta property="og:description" content="Professionele schoonmaak voor kantoren, horeca en woningen in Westland en omgeving. Eco-vriendelijk, discreet en oog voor detail.">
+<meta property="og:description" content="Professional cleaning for offices, hospitality and homes in Westland and the surrounding area. Eco-friendly, discreet and attentive to detail.">
 <meta property="og:image" content="https://ms-eco-cleaning.nl/photos/Logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -34,23 +23,23 @@
 <!-- TOPBAR -->
 <header class="topbar" id="topbar">
   <a href="#home" class="topbar-logo">
-    <picture><source srcset="photos/Logo.webp" type="image/webp"><img src="photos/Logo.png" alt="M.S ECO Cleaning Service Logo"></picture>
+    <picture><source srcset="../photos/Logo.webp" type="image/webp"><img src="../photos/Logo.png" alt="M.S ECO Cleaning Service Logo"></picture>
     <div class="topbar-logo-text">M.S ECO<span>Cleaning Service</span></div>
   </a>
   <nav class="topbar-nav">
-    <a href="#over">Over Ons</a>
-    <a href="#diensten">Diensten</a>
-    <a href="#galerij">Galerij</a>
-    <a href="#werkgebied">Werkgebied</a>
+    <a href="#over">About Us</a>
+    <a href="#diensten">Services</a>
+    <a href="#galerij">Gallery</a>
+    <a href="#werkgebied">Service Area</a>
     <a href="#contact">Contact</a>
   </nav>
   <div style="display:flex;align-items:center;gap:12px;">
     <a href="https://wa.me/31634859593" class="topbar-cta"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     <a href="mailto:ms.ecocleaningservice@gmail.com" target="_blank" class="topbar-cta-email"><svg viewBox="0 0 20 15" width="15" height="11" aria-hidden="true" style="vertical-align:-1px;flex-shrink:0"><rect width="20" height="15" rx="2" fill="white"/><polygon points="0,0 10,8 20,0" fill="#e74c3c"/></svg> E-mail</a>
     <div class="lang-switcher">
-      <a href="index.html" class="lang-btn active" hreflang="nl" onclick="localStorage.setItem('preferredLang','nl');sessionStorage.setItem('scrollPos',window.scrollY)">NL</a>
-      <a href="en/" class="lang-btn" hreflang="en" onclick="localStorage.setItem('preferredLang','en');sessionStorage.setItem('scrollPos',window.scrollY)">EN</a>
-      <a href="pl/" class="lang-btn" hreflang="pl" onclick="localStorage.setItem('preferredLang','pl');sessionStorage.setItem('scrollPos',window.scrollY)">PL</a>
+      <a href="../" class="lang-btn" hreflang="nl" onclick="localStorage.setItem('preferredLang','nl');sessionStorage.setItem('scrollPos',window.scrollY)">NL</a>
+      <a href="./" class="lang-btn active" hreflang="en" onclick="localStorage.setItem('preferredLang','en');sessionStorage.setItem('scrollPos',window.scrollY)">EN</a>
+      <a href="../pl/" class="lang-btn" hreflang="pl" onclick="localStorage.setItem('preferredLang','pl');sessionStorage.setItem('scrollPos',window.scrollY)">PL</a>
     </div>
     <button class="hamburger" id="hambBtn" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -65,15 +54,15 @@
     <a href="https://wa.me/31634859593" class="mob-cta" onclick="closeMenu()"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     <a href="mailto:ms.ecocleaningservice@gmail.com" target="_blank" class="mob-cta-email" onclick="closeMenu()"><svg viewBox="0 0 20 15" width="16" height="12" aria-hidden="true" style="vertical-align:-1px;flex-shrink:0"><rect width="20" height="15" rx="2" fill="white"/><polygon points="0,0 10,8 20,0" fill="#e74c3c"/></svg> E-mail</a>
   </div>
-  <a href="#over" onclick="closeMenu()">Over Ons</a>
-  <a href="#diensten" onclick="closeMenu()">Diensten</a>
-  <a href="#galerij" onclick="closeMenu()">Galerij</a>
-  <a href="#werkgebied" onclick="closeMenu()">Werkgebied</a>
+  <a href="#over" onclick="closeMenu()">About Us</a>
+  <a href="#diensten" onclick="closeMenu()">Services</a>
+  <a href="#galerij" onclick="closeMenu()">Gallery</a>
+  <a href="#werkgebied" onclick="closeMenu()">Service Area</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
   <div class="drawer-lang">
-    <a href="index.html" hreflang="nl" onclick="localStorage.setItem('preferredLang','nl');sessionStorage.setItem('scrollPos',window.scrollY)">NL</a>
-    <a href="en/" hreflang="en" onclick="localStorage.setItem('preferredLang','en');sessionStorage.setItem('scrollPos',window.scrollY)">EN</a>
-    <a href="pl/" hreflang="pl" onclick="localStorage.setItem('preferredLang','pl');sessionStorage.setItem('scrollPos',window.scrollY)">PL</a>
+    <a href="../" hreflang="nl" onclick="localStorage.setItem('preferredLang','nl');sessionStorage.setItem('scrollPos',window.scrollY)">NL</a>
+    <a href="./" hreflang="en" onclick="localStorage.setItem('preferredLang','en');sessionStorage.setItem('scrollPos',window.scrollY)">EN</a>
+    <a href="../pl/" hreflang="pl" onclick="localStorage.setItem('preferredLang','pl');sessionStorage.setItem('scrollPos',window.scrollY)">PL</a>
   </div>
 </div>
 
@@ -121,44 +110,44 @@
   </div>
 
   <div class="hero-content">
-    <picture><source srcset="photos/Logo.webp" type="image/webp"><img src="photos/Logo.png" alt="Logo" class="hero-logo"></picture>
-    <div class="hero-badge">✦ Professionele Schoonmaak ✦</div>
+    <picture><source srcset="../photos/Logo.webp" type="image/webp"><img src="../photos/Logo.png" alt="Logo" class="hero-logo"></picture>
+    <div class="hero-badge">✦ Professional Cleaning ✦</div>
     <h1>M.S <em>ECO</em><br>Cleaning Service</h1>
-    <p class="hero-sub">Eco-vriendelijk &nbsp;·&nbsp; Discreet &nbsp;·&nbsp; Oog voor detail</p>
+    <p class="hero-sub">Eco-friendly &nbsp;·&nbsp; Discreet &nbsp;·&nbsp; Attentive to detail</p>
     <div class="hero-tags">
-      <span class="hero-tag">🏢 Kantoren</span>
-      <span class="hero-tag">🏥 Praktijken</span>
-      <span class="hero-tag">🏠 Woningen</span>
+      <span class="hero-tag">🏢 Offices</span>
+      <span class="hero-tag">🏥 Practices</span>
+      <span class="hero-tag">🏠 Homes</span>
       <span class="hero-tag">✨ Deep Cleaning</span>
-      <span class="hero-tag">📦 Verhuisschoonmaak</span>
-      <span class="hero-tag">🔨 Renovatieschoonmaak</span>
-      <span class="hero-tag">🗂️ Reorganisatie</span>
+      <span class="hero-tag">📦 Moving Cleaning</span>
+      <span class="hero-tag">🔨 Renovation Cleaning</span>
+      <span class="hero-tag">🗂️ Reorganisation</span>
     </div>
     <div class="hero-cta">
-      <a href="https://wa.me/31634859593" class="btn-primary"><i class="fa-brands fa-whatsapp"></i> Direct WhatsApp Offerte</a>
-      <a href="#diensten" class="btn-secondary">Bekijk Diensten</a>
+      <a href="https://wa.me/31634859593" class="btn-primary"><i class="fa-brands fa-whatsapp"></i> Direct Contact</a>
+      <a href="#diensten" class="btn-secondary">View Services</a>
     </div>
 
     <div class="hero-problems">
       <div class="prob-card">
-        <div class="prob-before"><span class="prob-icon">😓</span><p>Geen tijd voor grondige schoonmaak</p></div>
+        <div class="prob-before"><span class="prob-icon">😓</span><p>No time for a thorough clean</p></div>
         <div class="prob-arrow">→</div>
-        <div class="prob-after"><span class="prob-icon">✅</span><p>Wij regelen het — snel & professioneel</p></div>
+        <div class="prob-after"><span class="prob-icon">✅</span><p>We handle it — fast & professional</p></div>
       </div>
       <div class="prob-card">
-        <div class="prob-before"><span class="prob-icon">⚗️</span><p>Chemische middelen in uw ruimte</p></div>
+        <div class="prob-before"><span class="prob-icon">⚗️</span><p>Harsh chemicals in your space</p></div>
         <div class="prob-arrow">→</div>
-        <div class="prob-after"><span class="prob-icon">🌿</span><p>100% eco-vriendelijke schoonmaakmiddelen</p></div>
+        <div class="prob-after"><span class="prob-icon">🌿</span><p>100% eco-friendly cleaning products</p></div>
       </div>
       <div class="prob-card">
-        <div class="prob-before"><span class="prob-icon">🗃️</span><p>Rommel & gebrek aan overzicht</p></div>
+        <div class="prob-before"><span class="prob-icon">🗃️</span><p>Clutter & lack of organisation</p></div>
         <div class="prob-arrow">→</div>
-        <div class="prob-after"><span class="prob-icon">✨</span><p>Reorganisatie & decluttering op maat</p></div>
+        <div class="prob-after"><span class="prob-icon">✨</span><p>Tailored reorganisation & decluttering</p></div>
       </div>
     </div>
 </section>
 
-<!-- OVER ONS -->
+<!-- ABOUT US -->
 <section id="over">
   <div class="sec-deco sec-deco--tr" aria-hidden="true">
     <svg viewBox="0 0 150 185" xmlns="http://www.w3.org/2000/svg" width="150" height="185">
@@ -177,205 +166,205 @@
   <div class="container">
     <div class="over-grid">
       <div class="over-text">
-        <p class="section-label">Over Ons</p>
-        <h2 class="section-title">Een familiebedrijf<br><em style="color:var(--gold)">met hart voor schoon</em></h2>
+        <p class="section-label">About Us</p>
+        <h2 class="section-title">A family business<br><em style="color:var(--gold)">with a passion for clean</em></h2>
         <div class="section-line"></div>
-        <p>M.S ECO Cleaning Service is een <strong>familiebedrijf</strong> dat schoonmaken met persoonlijke aandacht combineert. Met <strong>meer dan 12 jaar ervaring</strong> weten wij precies wat nodig is voor een vlekkeloos resultaat. Wij geloven dat een schone ruimte begint met mensen die er echt om geven — en dat gevoel brengen wij mee bij elk object.</p>
-        <p>Wij zijn actief voor zowel <strong>bedrijven als particulieren</strong> in de regio Westland en omgeving. Van kantoor tot kantine, van woning tot horecazaak — wij werken met <strong>eco-vriendelijke middelen</strong> die veilig zijn voor mens, dier en milieu.</p>
+        <p>M.S ECO Cleaning Service is a <strong>family business</strong> that combines cleaning with personal attention. With <strong>more than 12 years of experience</strong>, we know exactly what it takes to achieve a flawless result. We believe that a clean space starts with people who truly care — and that dedication is something we bring to every job.</p>
+        <p>We serve both <strong>businesses and private clients</strong> in the Westland region and surrounding area. From office to canteen, from home to restaurant — we work exclusively with <strong>eco-friendly products</strong> that are safe for people, animals and the environment.</p>
         <div class="why-trust">
           <div class="why-trust-header">
             <span style="font-size:2rem;flex-shrink:0;">👨‍👩‍👧</span>
             <div>
-              <strong class="why-trust-title">Waarom kiezen voor ons?</strong>
-              <span class="why-trust-sub">Familiebedrijf · Persoonlijk contact · Eerlijk & vakkundig werk</span>
+              <strong class="why-trust-title">Why choose us?</strong>
+              <span class="why-trust-sub">Family business · Personal contact · Honest & skilled work</span>
             </div>
           </div>
           <ul class="why-list">
-            <li><span class="why-check">✓</span>Meer dan 12 jaar ervaring</li>
-            <li><span class="why-check">✓</span>Betrouwbare en professionele service</li>
-            <li><span class="why-check">✓</span>Discreet en flexibel</li>
-            <li><span class="why-check">✓</span>Hoogwaardige kwaliteit met oog voor detail</li>
-            <li><span class="why-check">✓</span>Ecologische schoonmaakmiddelen</li>
-            <li><span class="why-check">✓</span>Eigen professionele apparatuur</li>
+            <li><span class="why-check">✓</span>More than 12 years of experience</li>
+            <li><span class="why-check">✓</span>Reliable and professional service</li>
+            <li><span class="why-check">✓</span>Discreet and flexible</li>
+            <li><span class="why-check">✓</span>High quality with attention to detail</li>
+            <li><span class="why-check">✓</span>Ecological cleaning products</li>
+            <li><span class="why-check">✓</span>Own professional equipment</li>
           </ul>
         </div>
       </div>
       <div class="over-visual">
-        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Eco-vriendelijk</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Eco-friendly</div></div>
         <div class="stat-divider"></div>
-        <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Jaar ervaring</div></div>
+        <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Years of experience</div></div>
         <div class="stat-divider"></div>
-        <div class="stat"><div class="stat-num">★★★★★</div><div class="stat-label">Klanttevredenheid</div></div>
+        <div class="stat"><div class="stat-num">★★★★★</div><div class="stat-label">Customer satisfaction</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DIENSTEN -->
+<!-- SERVICES -->
 <section id="diensten">
   <div class="container">
-    <p class="section-label">Onze Diensten</p>
-    <h2 class="section-title">Wat wij voor<br><em style="color:var(--gold)">u kunnen doen</em></h2>
+    <p class="section-label">Our Services</p>
+    <h2 class="section-title">What we can<br><em style="color:var(--gold)">do for you</em></h2>
     <div class="section-line"></div>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">🏢</div>
-        <h3>Bedrijfsschoonmaak</h3>
-        <p>Professionele reiniging van kantoren, praktijken en kantines. Regelmatig of eenmalig, afgestemd op uw wensen.</p>
+        <h3>Commercial Cleaning</h3>
+        <p>Professional cleaning of offices, practices and canteens. Regular or one-off, tailored to your needs.</p>
         <ul class="service-list">
-          <li>Stofzuigen & dweilen van vloeren</li>
-          <li>Reiniging van sanitair</li>
-          <li>Keukens & pantry's schoonmaken</li>
-          <li>Afstoffen van oppervlakken & apparatuur</li>
-          <li>Prullenbakken legen & afvalverwijdering</li>
+          <li>Vacuuming & mopping floors</li>
+          <li>Cleaning sanitary facilities</li>
+          <li>Kitchens & pantries</li>
+          <li>Dusting surfaces & equipment</li>
+          <li>Emptying bins & waste removal</li>
         </ul>
-        <p class="service-extra-title">Extra services (optioneel):</p>
+        <p class="service-extra-title">Optional extras:</p>
         <ul class="service-list service-extra">
-          <li>Tapijt- & vloerreiniging</li>
-          <li>Levering van hygiëneproducten</li>
-          <li>Wassen van handdoeken & theedoeken</li>
+          <li>Carpet & floor cleaning</li>
+          <li>Supply of hygiene products</li>
+          <li>Washing towels & tea towels</li>
         </ul>
       </div>
       <div class="service-card">
         <div class="service-icon">🏠</div>
-        <h3>Particuliere Schoonmaak</h3>
-        <p>Uw thuis verdient de beste zorg. Van reguliere schoonmaak tot uitgebreide behandeling van elke ruimte.</p>
+        <h3>Residential Cleaning</h3>
+        <p>Your home deserves the best care. From regular cleaning to a thorough treatment of every room.</p>
         <ul class="service-list">
-          <li>Woonkamer & slaapkamers</li>
-          <li>Keuken & badkamer</li>
-          <li>Vloeren & ramen</li>
-          <li>Verhuisschoonmaak</li>
-          <li>Renovatieschoonmaak</li>
-          <li>Eenmalig of periodiek</li>
+          <li>Living rooms & bedrooms</li>
+          <li>Kitchen & bathroom</li>
+          <li>Floors & windows</li>
+          <li>Move-in / move-out cleaning</li>
+          <li>Post-renovation cleaning</li>
+          <li>One-off or periodic</li>
         </ul>
       </div>
       <div class="service-card">
         <div class="service-icon">🗂️</div>
-        <h3>Reorganisatie & Opruimen</h3>
-        <p>Meer rust, ruimte en overzicht in uw woning of werkplek. Wij helpen u reorganiseren met een duurzame aanpak.</p>
+        <h3>Reorganisation & Decluttering</h3>
+        <p>More calm, space and clarity in your home or workplace. We help you reorganise with a sustainable approach.</p>
         <ul class="service-list">
-          <li>Garderobe reorganisatie</li>
-          <li>Keuken opruimen</li>
-          <li>Opbergsystemen</li>
-          <li>Eenmalige service</li>
+          <li>Wardrobe reorganisation</li>
+          <li>Kitchen decluttering</li>
+          <li>Storage solutions</li>
+          <li>One-off service</li>
         </ul>
       </div>
     </div>
     <div class="pricing-strip">
       <div class="pricing-left">
-        <p class="pricing-headline">Vraag een vrijblijvende offerte aan</p>
+        <p class="pricing-headline">Request a no-obligation quote</p>
         <div class="pricing-meta">
-          <span>✓ Offerte binnen 24 uur</span>
-          <span>✓ Gratis & vrijblijvend</span>
+          <span>✓ Quote within 24 hours</span>
+          <span>✓ Free & no obligation</span>
         </div>
       </div>
-      <a href="https://wa.me/31634859593" class="btn-primary" style="flex-shrink:0;white-space:nowrap"><i class="fa-brands fa-whatsapp"></i> WhatsApp Offerte</a>
+      <a href="https://wa.me/31634859593" class="btn-primary" style="flex-shrink:0;white-space:nowrap"><i class="fa-brands fa-whatsapp"></i> WhatsApp Quote</a>
     </div>
     <div class="deep-banner">
       <div style="flex:1">
         <h3>✨ Deep Cleaning</h3>
-        <p>Onze diepgaande reinigingsservice bereikt elke hoek, elke naad en elk oppervlak. Perfect na een verhuizing, verbouwing, of als extra grondige beurt.</p>
+        <p>Our deep cleaning service reaches every corner, every seam and every surface. Perfect after a move, renovation, or as an extra thorough clean.</p>
         <div class="deep-checks">
-          <span class="deep-check">Keuken</span>
-          <span class="deep-check">Badkamer</span>
-          <span class="deep-check">Garderobe</span>
-          <span class="deep-check">Professioneel & eco</span>
-          <span class="deep-check">Eenmalige service</span>
+          <span class="deep-check">Kitchen</span>
+          <span class="deep-check">Bathroom</span>
+          <span class="deep-check">Wardrobe</span>
+          <span class="deep-check">Professional & eco</span>
+          <span class="deep-check">One-off service</span>
         </div>
       </div>
-      <a href="https://wa.me/31634859593" class="btn-primary" style="white-space:nowrap;flex-shrink:0">Vraag offerte aan</a>
+      <a href="https://wa.me/31634859593" class="btn-primary" style="white-space:nowrap;flex-shrink:0">Direct Contact</a>
     </div>
   </div>
 </section>
 
-<!-- GALERIJ -->
+<!-- GALLERY -->
 <section id="galerij">
   <div class="container">
-    <p class="section-label">Ons Werk</p>
-    <h2 class="section-title">Resultaten die<br><em style="color:var(--gold)">voor zich spreken</em></h2>
+    <p class="section-label">Our Work</p>
+    <h2 class="section-title">Results that<br><em style="color:var(--gold)">speak for themselves</em></h2>
     <div class="section-line"></div>
-    <button class="gallery-toggle" id="galleryToggle" onclick="toggleGallery()" aria-expanded="true" title="Galerij in-/uitklappen">▲ Galerij inklappen</button>
+    <button class="gallery-toggle" id="galleryToggle" onclick="toggleGallery()" aria-expanded="true" title="Expand/collapse gallery">Collapse Gallery</button>
     <div id="galleryCollapsible">
     <div class="gallery-intro">
-      <p>Een selectie van onze recente projecten — van grondige bedrijfsschoonmaak tot voor/na deep cleaning en reorganisatie.</p>
+      <p>A selection of our recent projects — from thorough commercial cleaning to before/after deep cleaning and reorganisation.</p>
     </div>
     <div class="gallery-tabs">
-      <button class="tab-btn active" onclick="filterGallery('all',this)">Alles</button>
-      <button class="tab-btn" onclick="filterGallery('kantoor',this)">Kantoor & Horeca</button>
+      <button class="tab-btn active" onclick="filterGallery('all',this)">All</button>
+      <button class="tab-btn" onclick="filterGallery('kantoor',this)">Office & Hospitality</button>
       <button class="tab-btn" onclick="filterGallery('deep',this)">Deep Cleaning</button>
-      <button class="tab-btn" onclick="filterGallery('reorganisatie',this)">Reorganisatie</button>
+      <button class="tab-btn" onclick="filterGallery('reorganisatie',this)">Reorganisation</button>
     </div>
     <div class="gallery-grid" id="galleryGrid">
 
       <div class="gallery-item featured" data-cat="kantoor" onclick="openLightbox(this)">
-        <img src="photos/Bedrijfschoonmaak1.jpg" alt="Kantoor reiniging" loading="lazy">
+        <img src="../photos/Bedrijfschoonmaak1.jpg" alt="Office cleaning" loading="lazy">
         <div class="gallery-overlay">
           <div class="gallery-overlay-text">
-            <h4>Kantoor reiniging</h4>
-            <span>Bedrijfsschoonmaak</span>
+            <h4>Office cleaning</h4>
+            <span>Commercial Cleaning</span>
           </div>
         </div>
       </div>
       <div class="gallery-item " data-cat="kantoor" onclick="openLightbox(this)">
-        <img src="photos/bedrijfschoonmaak2.jpg" alt="Vergaderruimte" loading="lazy">
+        <img src="../photos/bedrijfschoonmaak2.jpg" alt="Meeting room" loading="lazy">
         <div class="gallery-overlay">
           <div class="gallery-overlay-text">
-            <h4>Vergaderruimte</h4>
-            <span>Bedrijfsschoonmaak</span>
+            <h4>Meeting room</h4>
+            <span>Commercial Cleaning</span>
           </div>
         </div>
       </div>
       <div class="gallery-item " data-cat="kantoor" onclick="openLightbox(this)">
-        <img src="photos/Bedrijfschoonmaak3.jpg" alt="Schoonmaak in uitvoering" loading="lazy">
+        <img src="../photos/Bedrijfschoonmaak3.jpg" alt="Cleaning in progress" loading="lazy">
         <div class="gallery-overlay">
           <div class="gallery-overlay-text">
-            <h4>Schoonmaak in uitvoering</h4>
-            <span>Bedrijfsschoonmaak</span>
+            <h4>Cleaning in progress</h4>
+            <span>Commercial Cleaning</span>
           </div>
         </div>
       </div>
       <div class="gallery-item " data-cat="kantoor" onclick="openLightbox(this)">
-        <img src="photos/Bedrijfschoonmaak4.jpg" alt="Entree reiniging" loading="lazy">
+        <img src="../photos/Bedrijfschoonmaak4.jpg" alt="Entrance cleaning" loading="lazy">
         <div class="gallery-overlay">
           <div class="gallery-overlay-text">
-            <h4>Entree reiniging</h4>
-            <span>Bedrijfsschoonmaak</span>
+            <h4>Entrance cleaning</h4>
+            <span>Commercial Cleaning</span>
           </div>
         </div>
       </div>
       <div class="gallery-item " data-cat="kantoor" onclick="openLightbox(this)">
-        <img src="photos/Bedrijfschoonmaak5.jpg" alt="Bar & restaurant" loading="lazy">
+        <img src="../photos/Bedrijfschoonmaak5.jpg" alt="Bar & restaurant" loading="lazy">
         <div class="gallery-overlay">
           <div class="gallery-overlay-text">
             <h4>Bar & restaurant</h4>
-            <span>Bedrijfsschoonmaak</span>
+            <span>Commercial Cleaning</span>
           </div>
         </div>
       </div>
       <div class="gallery-item " data-cat="deep" onclick="openLightbox(this)">
-        <img src="photos/deepcleaning1.jpg" alt="Shutters na reiniging" loading="lazy">
+        <img src="../photos/deepcleaning1.jpg" alt="Shutters after cleaning" loading="lazy">
         <div class="gallery-overlay">
           <div class="gallery-overlay-text">
-            <h4>Shutters na reiniging</h4>
+            <h4>Shutters after cleaning</h4>
             <span>Deep Cleaning</span>
           </div>
         </div>
       </div>
       <div class="gallery-item " data-cat="deep" onclick="openLightbox(this)">
-        <img src="photos/deepcleaning2.jpg" alt="Koffiemachine reiniging" loading="lazy">
+        <img src="../photos/deepcleaning2.jpg" alt="Coffee machine cleaning" loading="lazy">
         <div class="gallery-overlay">
           <div class="gallery-overlay-text">
-            <h4>Koffiemachine reiniging</h4>
+            <h4>Coffee machine cleaning</h4>
             <span>Deep Cleaning</span>
           </div>
         </div>
       </div>
       <div class="gallery-item " data-cat="reorganisatie" onclick="openLightbox(this)">
-        <img src="photos/reorganisatie1.jpg" alt="Ruimte reorganisatie" loading="lazy">
+        <img src="../photos/reorganisatie1.jpg" alt="Space reorganisation" loading="lazy">
         <div class="gallery-overlay">
           <div class="gallery-overlay-text">
-            <h4>Ruimte reorganisatie</h4>
-            <span>Reorganisatie</span>
+            <h4>Space reorganisation</h4>
+            <span>Reorganisation</span>
           </div>
         </div>
       </div>
@@ -392,30 +381,30 @@
   <button class="lightbox-nav" id="lightboxNext" onclick="lightboxNav(1)">›</button>
 </div>
 
-<!-- WERKGEBIED -->
+<!-- SERVICE AREA -->
 <section id="werkgebied">
   <div class="container">
-    <p class="section-label">Werkgebied</p>
-    <h2 class="section-title">Actief in<br><em style="color:var(--gold)">Westland & omgeving</em></h2>
+    <p class="section-label">Service Area</p>
+    <h2 class="section-title">Active in<br><em style="color:var(--gold)">Westland & surroundings</em></h2>
     <div class="section-line"></div>
     <div class="werkgebied-content">
       <div>
-        <p style="color:var(--grey);line-height:1.8;margin-bottom:28px;">Als familiebedrijf zijn wij trots actief in de regio Westland en directe omgeving. Persoonlijk contact staat bij ons centraal — twijfelt u of wij bij u in de buurt werken? Bel of app ons gerust!</p>
+        <p style="color:var(--grey);line-height:1.8;margin-bottom:28px;">As a family business we are proudly active in the Westland region and the surrounding area. Personal contact is central to everything we do — unsure whether we cover your location? Feel free to call or message us!</p>
         <div class="area-card"><span>📍</span><div><p>Westland</p><span>Naaldwijk, Monster, 's-Gravenzande, De Lier</span></div></div>
-        <div class="area-card"><span>📍</span><div><p>Omgeving Westland</p><span>Delft, Den Haag, Rotterdam</span></div></div>
-        <div class="area-card"><span>📍</span><div><p>Op aanvraag</p><span>Andere locaties in overleg mogelijk</span></div></div>
+        <div class="area-card"><span>📍</span><div><p>Westland surroundings</p><span>Delft, Den Haag, Rotterdam</span></div></div>
+        <div class="area-card"><span>📍</span><div><p>On request</p><span>Other locations available upon consultation</span></div></div>
       </div>
       <div>
         <div class="map-visual">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39301.2!2d4.1500!3d52.0000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b5a4b1b1b1b1%3A0x0!2sWestland%2C+Netherlands!5e0!3m2!1snl!2snl!4v1700000000000!5m2!1snl!2snl"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39301.2!2d4.1500!3d52.0000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b5a4b1b1b1b1%3A0x0!2sWestland%2C+Netherlands!5e0!3m2!1sen!2snl!4v1700000000000!5m2!1sen!2snl"
             width="100%"
             height="100%"
             style="border:0; border-radius:12px;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Werkgebied Westland">
+            title="Service area Westland">
           </iframe>
         </div>
       </div>
@@ -440,11 +429,11 @@
   </div>
   <div class="container">
     <p class="section-label">Contact</p>
-    <h2 class="section-title">Neem <em style="color:var(--gold)">contact op</em></h2>
+    <h2 class="section-title">Get in <em style="color:var(--gold)">touch</em></h2>
     <div class="section-line"></div>
     <div class="contact-grid">
       <div class="contact-info">
-        <p>Wilt u een offerte aanvragen of heeft u vragen over onze diensten? Wij staan voor u klaar via WhatsApp, telefoon of e-mail.</p>
+        <p>Would you like to request a quote or do you have questions about our services? We are happy to help you via WhatsApp, phone or e-mail.</p>
         <div class="contact-methods">
           <a href="https://wa.me/31634859593" class="contact-method">
             <div class="contact-icon">💬</div>
@@ -452,7 +441,7 @@
           </a>
           <a href="tel:0634859593" class="contact-method">
             <div class="contact-icon">📞</div>
-            <div><h4>Bellen</h4><p>0634859593</p></div>
+            <div><h4>Call us</h4><p>0634859593</p></div>
           </a>
           <a href="mailto:ms.ecocleaningservice@gmail.com" target="_blank" class="contact-method">
             <div class="contact-icon">✉️</div>
@@ -461,23 +450,23 @@
         </div>
       </div>
       <div class="contact-form-box">
-        <h3 style="font-size:1.5rem;margin-bottom:22px;">Stuur een bericht</h3>
+        <h3 style="font-size:1.5rem;margin-bottom:22px;">Send a message</h3>
         <form action="https://formspree.io/f/xwvranzg" method="POST" onsubmit="handleSubmit(event)">
-          <div class="form-group"><label>Naam</label><input type="text" name="naam" placeholder="Uw naam" required></div>
-          <div class="form-group"><label>Telefoonnummer / E-mail</label><input type="text" name="contact" placeholder="Hoe kunnen wij u bereiken?" required></div>
+          <div class="form-group"><label>Name</label><input type="text" name="naam" placeholder="Your name" required></div>
+          <div class="form-group"><label>Phone number / E-mail</label><input type="text" name="contact" placeholder="How can we reach you?" required></div>
           <div class="form-group">
-            <label>Dienst</label>
+            <label>Service</label>
             <select name="dienst">
-              <option value="">Kies een dienst...</option>
-              <option>Bedrijfsschoonmaak</option>
-              <option>Particuliere Schoonmaak</option>
+              <option value="">Choose a service...</option>
+              <option>Commercial Cleaning</option>
+              <option>Residential Cleaning</option>
               <option>Deep Cleaning</option>
-              <option>Reorganisatie & Opruimen</option>
-              <option>Anders / Overleg</option>
+              <option>Reorganisation & Decluttering</option>
+              <option>Other / Consultation</option>
             </select>
           </div>
-          <div class="form-group"><label>Bericht</label><textarea name="bericht" placeholder="Vertel ons meer over uw wensen..."></textarea></div>
-          <button type="submit" class="form-submit">Verstuur Bericht ✦</button>
+          <div class="form-group"><label>Message</label><textarea name="bericht" placeholder="Tell us more about your wishes..."></textarea></div>
+          <button type="submit" class="form-submit">Send Message ✦</button>
         </form>
       </div>
     </div>
@@ -504,26 +493,26 @@
       <circle cx="288" cy="18" r="2.5" fill="#c9a84c" opacity="0.38"/>
     </svg>
     <div class="footer-logo-wrap">
-      <picture><source srcset="photos/Logo.webp" type="image/webp"><img src="photos/Logo.png" alt="Logo"></picture>
+      <picture><source srcset="../photos/Logo.webp" type="image/webp"><img src="../photos/Logo.png" alt="Logo"></picture>
       <div class="footer-brand">M.S ECO Cleaning Service</div>
     </div>
-    <p class="footer-tagline">Eco-vriendelijk · Discreet · Oog voor detail</p>
-    <p>📍 Westland & omgeving &nbsp;|&nbsp; 📞 0634859593 &nbsp;|&nbsp; ✉️ ms.ecocleaningservice@gmail.com</p>
+    <p class="footer-tagline">Eco-friendly · Discreet · Attentive to detail</p>
+    <p>📍 Westland & surroundings &nbsp;|&nbsp; 📞 0634859593 &nbsp;|&nbsp; ✉️ ms.ecocleaningservice@gmail.com</p>
     <div class="footer-social">
       <a href="https://www.facebook.com/msecocleaningservice" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
     </div>
     <p style="font-size:.72rem;opacity:.45;margin-top:12px;">KvK: <span style="opacity:.7">89787986</span></p>
-    <p style="font-size:.72rem;opacity:.45;margin-top:6px;">© 2026 M.S ECO Cleaning Service. Alle rechten voorbehouden. &nbsp;|&nbsp; <a href="privacy.html" style="color:inherit;text-decoration:underline;">Privacybeleid</a></p>
+    <p style="font-size:.72rem;opacity:.45;margin-top:6px;">© 2026 M.S ECO Cleaning Service. All rights reserved. &nbsp;|&nbsp; <a href="../privacy-en.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a></p>
   </div>
 </footer>
 
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
-  <p>Deze website maakt gebruik van Google Maps en Google Fonts. Hierdoor kunnen cookies van Google worden geplaatst. Door verder te gaan op deze website ga je hiermee akkoord.</p>
-  <button class="cookie-btn" onclick="acceptCookies()">Akkoord</button>
+  <p>This website uses Google Maps and Google Fonts. As a result, cookies from Google may be placed. By continuing to use this website you agree to this.</p>
+  <button class="cookie-btn" onclick="acceptCookies()">Accept</button>
 </div>
 
-<script src="script.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>
