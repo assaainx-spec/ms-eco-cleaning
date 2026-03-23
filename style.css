@@ -341,6 +341,20 @@ footer p { color:var(--grey); font-size:.8rem; line-height:1.7; }
   .hero-leaf--bl { display: none; }
 }
 
+/* ── MOBILE-ONLY CTA UNDER WHY CHOOSE US ── */
+.why-cta-mobile { display: none; }
+@media (max-width: 600px) {
+  .why-cta-mobile {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 12px; margin-top: 24px; text-align: center;
+  }
+  .why-cta-mobile .btn-primary { width: 100%; justify-content: center; }
+  .why-cta-sub {
+    font-size: .78rem; color: var(--grey);
+    letter-spacing: .04em; margin: 0;
+  }
+}
+
 /* Section label — small gold leaf ornament before text */
 .section-label::before {
   content: '';
