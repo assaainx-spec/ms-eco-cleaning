@@ -310,6 +310,15 @@ footer p { color:var(--grey); font-size:.8rem; line-height:1.7; }
 .drawer-lang a { color:rgba(248,246,240,.5); font-size:.78rem; font-weight:600; letter-spacing:.06em; text-decoration:none; padding:4px 8px; border-radius:3px; border:1px solid transparent; transition:color .2s, border-color .2s; }
 .drawer-lang a:hover { color:var(--gold); border-color:var(--gold); }
 
+/* ── SECTION & FOOTER BOTANICAL DECORATIONS ── */
+#over, #contact { position: relative; overflow: hidden; }
+.sec-deco { position: absolute; pointer-events: none; overflow: visible; }
+.sec-deco--tr { top: -10px; right: -10px; width: 150px; height: 185px; opacity: .28; }
+.sec-deco--bl { bottom: -10px; left: -10px; width: 125px; height: 155px; opacity: .22; }
+@media (max-width: 600px) { .sec-deco { display: none; } }
+
+.footer-botanical { display: block; margin: 0 auto 32px; opacity: .55; }
+
 /* ── GOLD BOTANICAL DECORATIONS ── */
 .hero-deco {
   position: absolute;
