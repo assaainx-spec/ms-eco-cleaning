@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagina niet gevonden — M.S ECO Cleaning Service</title>
+<link rel="icon" type="image/png" href="photos/Logo.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .page-404 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .page-404 .code {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .page-404 h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .page-404 p {
+    color: var(--grey);
+    font-size: 1rem;
+    max-width: 400px;
+    margin-bottom: 36px;
+  }
+</style>
+<script>
+(function(){
+  var pref = localStorage.getItem('preferredLang');
+  if (pref === 'en' || pref === 'pl') {
+    document.documentElement.lang = pref;
+  }
+})();
+</script>
+</head>
+<body>
+<div class="page-404">
+  <a href="/" class="topbar-logo" style="margin-bottom:40px;">
+    <picture>
+      <source srcset="photos/Logo.webp" type="image/webp">
+      <img src="photos/Logo.png" alt="M.S ECO Cleaning Service Logo" style="height:56px;">
+    </picture>
+  </a>
+  <div class="code">404</div>
+  <h1>Pagina niet gevonden</h1>
+  <p>De pagina die u zoekt bestaat niet of is verplaatst.</p>
+  <a href="/" class="btn-primary">← Terug naar home</a>
+</div>
+</body>
+</html>
