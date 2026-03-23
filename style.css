@@ -311,10 +311,15 @@ footer p { color:var(--grey); font-size:.8rem; line-height:1.7; }
 .drawer-lang a:hover { color:var(--gold); border-color:var(--gold); }
 
 /* ── GOLD BOTANICAL DECORATIONS ── */
-.hero-leaf {
+.hero-deco {
   position: absolute;
+  inset: 0;
   pointer-events: none;
   z-index: 1;
+  overflow: hidden;
+}
+.hero-leaf {
+  position: absolute;
   overflow: visible;
 }
 .hero-leaf--tr {
