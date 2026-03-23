@@ -410,7 +410,8 @@
           <div class="map-placeholder"
             data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39301.2!2d4.1500!3d52.0000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b5a4b1b1b1b1%3A0x0!2sWestland%2C+Netherlands!5e0!3m2!1spl!2snl!4v1700000000000!5m2!1spl!2snl"
             data-title="Obszar działania Westland">
-            <p>Zaakceptuj pliki cookie, aby załadować mapę.</p>
+            <img src="../photos/map-static.webp" alt="Mapa obszaru działania Westland" class="map-static-img">
+            <span class="map-static-attr">© Google</span>
           </div>
         </div>
       </div>
@@ -484,7 +485,10 @@
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
   <p>Ta strona korzysta z Google Maps i Google Fonts. W związku z tym mogą być umieszczane pliki cookie firmy Google. Korzystając z tej strony, wyrażasz na to zgodę.</p>
-  <button class="cookie-btn" onclick="acceptCookies()">Akceptuję</button>
+  <div class="cookie-btns">
+    <button class="cookie-btn-decline" onclick="declineCookies()">Odmów</button>
+    <button class="cookie-btn" onclick="acceptCookies()">Akceptuję</button>
+  </div>
 </div>
 
 <script src="../script.js"></script>

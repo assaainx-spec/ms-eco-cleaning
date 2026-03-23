@@ -68,17 +68,6 @@ function toggleGallery() {
 
 // ── COOKIE BANNER ──
 function loadGoogleServices() {
-  if (!document.getElementById('gfonts')) {
-    var pc = document.createElement('link');
-    pc.rel = 'preconnect';
-    pc.href = 'https://fonts.googleapis.com';
-    document.head.appendChild(pc);
-    var lnk = document.createElement('link');
-    lnk.id = 'gfonts';
-    lnk.rel = 'stylesheet';
-    lnk.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap';
-    document.head.appendChild(lnk);
-  }
   document.querySelectorAll('.map-placeholder').forEach(function(el) {
     var iframe = document.createElement('iframe');
     iframe.src = el.getAttribute('data-src');
@@ -95,11 +84,17 @@ function loadGoogleServices() {
 if (localStorage.getItem('cookiesAccepted')) {
   document.getElementById('cookieBanner').style.display = 'none';
   loadGoogleServices();
+} else if (localStorage.getItem('cookiesDeclined')) {
+  document.getElementById('cookieBanner').style.display = 'none';
 }
 function acceptCookies() {
   localStorage.setItem('cookiesAccepted', '1');
   document.getElementById('cookieBanner').style.display = 'none';
   loadGoogleServices();
+}
+function declineCookies() {
+  localStorage.setItem('cookiesDeclined', '1');
+  document.getElementById('cookieBanner').style.display = 'none';
 }
 
 // ── SLIDE DRAWER ──
