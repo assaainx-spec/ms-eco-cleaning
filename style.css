@@ -124,10 +124,10 @@ section { padding:90px 20px; scroll-margin-top:64px; }
 
 /* ── PRICING STRIP ── */
 .pricing-strip { margin-bottom:22px; background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(26,45,107,.25)); border:1px solid rgba(201,168,76,.35); border-radius:12px; padding:28px 36px; display:flex; gap:28px; align-items:center; flex-wrap:wrap; justify-content:center; }
-.pricing-headline { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:700; color:var(--white); margin:0; text-align:center; flex:1; }
+.pricing-headline { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:700; color:var(--white); margin:0; flex:1; }
 .pricing-meta { display:flex; flex-wrap:wrap; gap:10px 20px; }
 .pricing-meta span { font-size:.82rem; color:var(--grey); }
-@media (max-width:600px) { .pricing-strip { flex-direction:column; padding:24px 20px; align-items:center; } .pricing-headline { flex:unset; width:100%; } .pricing-strip .btn-primary { width:100%; justify-content:center; } }
+@media (max-width:600px) { .pricing-strip { flex-direction:column; padding:24px 20px; align-items:center; } .pricing-headline { flex:unset; width:100%; text-align:center; } .pricing-strip .btn-primary { width:100%; justify-content:center; } }
 
 /* ── EXTRA SERVICES ── */
 .service-extra-title { font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin:16px 0 8px; }
