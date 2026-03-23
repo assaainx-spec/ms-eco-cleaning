@@ -67,12 +67,39 @@ function toggleGallery() {
 }
 
 // ── COOKIE BANNER ──
+function loadGoogleServices() {
+  if (!document.getElementById('gfonts')) {
+    var pc = document.createElement('link');
+    pc.rel = 'preconnect';
+    pc.href = 'https://fonts.googleapis.com';
+    document.head.appendChild(pc);
+    var lnk = document.createElement('link');
+    lnk.id = 'gfonts';
+    lnk.rel = 'stylesheet';
+    lnk.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap';
+    document.head.appendChild(lnk);
+  }
+  document.querySelectorAll('.map-placeholder').forEach(function(el) {
+    var iframe = document.createElement('iframe');
+    iframe.src = el.getAttribute('data-src');
+    iframe.width = '100%';
+    iframe.height = '100%';
+    iframe.style.cssText = 'border:0; border-radius:12px;';
+    iframe.allowFullscreen = true;
+    iframe.loading = 'lazy';
+    iframe.referrerPolicy = 'no-referrer-when-downgrade';
+    iframe.title = el.getAttribute('data-title') || 'Map';
+    el.parentNode.replaceChild(iframe, el);
+  });
+}
 if (localStorage.getItem('cookiesAccepted')) {
   document.getElementById('cookieBanner').style.display = 'none';
+  loadGoogleServices();
 }
 function acceptCookies() {
   localStorage.setItem('cookiesAccepted', '1');
   document.getElementById('cookieBanner').style.display = 'none';
+  loadGoogleServices();
 }
 
 // ── SLIDE DRAWER ──
