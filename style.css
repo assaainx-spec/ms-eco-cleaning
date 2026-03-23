@@ -128,7 +128,7 @@ section { padding:90px 20px; scroll-margin-top:64px; }
 .pricing-headline { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:700; color:var(--white); margin-bottom:10px; text-align:center; }
 .pricing-meta { display:flex; flex-wrap:wrap; gap:10px 20px; }
 .pricing-meta span { font-size:.82rem; color:var(--grey); }
-@media (max-width:600px) { .pricing-strip { flex-direction:column; padding:24px 20px; align-items:flex-start; } .pricing-strip .btn-primary { width:100%; justify-content:center; } }
+@media (max-width:600px) { .pricing-strip { flex-direction:column; padding:24px 20px; align-items:center; } .pricing-strip .btn-primary { width:100%; justify-content:center; } }
 
 /* ── EXTRA SERVICES ── */
 .service-extra-title { font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin:16px 0 8px; }
